@@ -1,4 +1,5 @@
 name: 'Doxygen GitHub Pages Deploy Action'
+author: 'Jonah Lawrence'
 description: 'Make docs with Doxygen then deploy the generated HTML to GitHub pages'
 branding:
   icon: "upload-cloud"
