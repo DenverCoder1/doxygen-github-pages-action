@@ -4,7 +4,7 @@ description: 'Make docs with Doxygen then deploy the generated HTML to GitHub pa
 
 inputs:
   github_token:
-    description: 'A GitHub token for pushing to the repo. Example: ${{ secrets.GITHUB_TOKEN }}'
+    description: 'A GitHub token for pushing to the repo. Example: https://git.io/passing-token'
     required: true
   branch:
     description: 'Branch name for pushing GitHub pages files'
