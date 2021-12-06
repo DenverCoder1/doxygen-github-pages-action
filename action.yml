@@ -1,6 +1,8 @@
 name: 'Doxygen GitHub Pages Deploy Action'
-
 description: 'Make docs with Doxygen then deploy the generated HTML to GitHub pages'
+branding:
+  icon: "upload-cloud"
+  color: "purple"
 
 inputs:
   github_token:
