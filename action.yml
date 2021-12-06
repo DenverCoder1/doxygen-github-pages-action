@@ -29,8 +29,8 @@ runs:
       shell: bash
       
     - name: Create .nojekyll (ensures pages with underscores work on gh pages)
-        run: touch docs/html/.nojekyll
-        shell: bash
+      run: touch docs/html/.nojekyll
+      shell: bash
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
