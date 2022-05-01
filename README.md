@@ -17,6 +17,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: DenverCoder1/doxygen-github-pages-action@v1.1.0
         with:
@@ -46,6 +48,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: DenverCoder1/doxygen-github-pages-action@v1.1.0
         with:
