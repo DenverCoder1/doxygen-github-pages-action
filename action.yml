@@ -21,6 +21,9 @@ inputs:
     description: 'Path of the Doxygen configuration file'
     required: true
     default: "Doxyfile"
+  target_folder:
+    description: 'Directory on the deployment branch for pushing the build files'
+    required: false
 
 runs:
   using: "composite"
@@ -48,3 +51,4 @@ runs:
         token: ${{ inputs.github_token }}
         branch: ${{ inputs.branch }}
         folder: ${{ inputs.folder }}
+        target-folder: ${{ inputs.target_folder }}
