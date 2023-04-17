@@ -29,6 +29,7 @@ jobs:
 - `branch` (optional): Branch to deploy to. Defaults to `gh-pages`.
 - `folder` (optional): Folder where the docs are built. Defaults to `docs/html`.
 - `config_file` (optional): Path of the Doxygen configuration file. Defaults to `Doxyfile`.
+- `target_folder` (optional): Directory within the deployment branch to push to. Defaults to empty (root).
 
 ## Advanced Usage
 
@@ -65,10 +66,10 @@ The [actions/checkout](https://github.com/actions/checkout) step is used to chec
 
 ### 2. Install Doxygen
 
-Doxygen is installed by running the following command:
+Doxygen and Graphviz are installed by running the following command:
 
 ```bash
-sudo apt-get install doxygen -y
+sudo apt-get install doxygen graphviz -y
 ```
 
 ### 3. Generate Doxygen Documentation
@@ -98,6 +99,8 @@ The [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-p
 The `folder` option determines which folder to deploy. By default, it is `docs/html`.
 
 The `branch` option determines which branch to deploy to. By default, it is `gh-pages`.
+
+The `target_folder` option determines which directory in the deployment branch to push to. By default, the root of the branch is overwritten.
 
 ## License
 
