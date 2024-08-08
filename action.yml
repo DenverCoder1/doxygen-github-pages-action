@@ -24,6 +24,10 @@ inputs:
   target_folder:
     description: 'Directory on the deployment branch for pushing the build files'
     required: false
+  doxygen_version:
+    description: 'Version of Doxygen to install'
+    required: false
+    default: "1.9.6"
 
 runs:
   using: "composite"
@@ -33,8 +37,16 @@ runs:
       with:
         submodules: "true"
 
-    - name: Install Doxygen
-      run: sudo apt-get install doxygen graphviz -y
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y wget graphviz
+      shell: bash
+
+    - name: Install Doxygen v${{ inputs.doxygen_version }}
+      run: |
+        transformed_version=$(echo "${{ inputs.doxygen_version }}" | tr '.' '_')
+        wget https://github.com/doxygen/doxygen/releases/download/Release_${transformed_version}/doxygen-${{ inputs.doxygen_version }}.linux.bin.tar.gz
+        tar -xzf doxygen-${{ inputs.doxygen_version }}.linux.bin.tar.gz
+        sudo mv doxygen-${{ inputs.doxygen_version }}/bin/doxygen /usr/local/bin/doxygen
       shell: bash
 
     - name: Generate Doxygen Documentation
