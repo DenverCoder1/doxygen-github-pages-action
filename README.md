@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write 
     steps:
       - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
         with:
@@ -53,7 +52,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write 
     steps:
       - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
         with:
